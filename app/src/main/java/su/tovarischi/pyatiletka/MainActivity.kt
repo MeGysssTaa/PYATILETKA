@@ -3,15 +3,10 @@ package su.tovarischi.pyatiletka
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -28,8 +23,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        toolbar.navigationIcon = AppCompatResources.getDrawable(applicationContext, R.drawable.ic_launcher_fg)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        toolbar.navigationIcon = AppCompatResources.getDrawable(this, R.drawable.ic_outline_menu_white_24dp)
 
         startService(Intent(this, BackgroundMusicService::class.java))
     }
@@ -46,20 +41,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_groceries -> {
-                // Handle Groceries navigation
-                println("groceries")
+            R.id.nav_category_party_tasks -> {
+
             }
-            R.id.nav_work -> {
-                // Handle Work Tasks navigation
-                println("work")
+            R.id.nav_category_home_tasks -> {
+                println("a")
             }
-            R.id.nav_home -> {
-                // Handle Home Tasks navigation
-                println("home")
+            R.id.nav_category_tickets -> {
+                println("b")
+            }
+            R.id.nav_stats -> {
+                println("s")
             }
         }
+
         drawerLayout.closeDrawer(GravityCompat.START)
+
         return true
     }
 

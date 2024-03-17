@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">ПЯТИЛЕТКА</string>
-    <string name="navigation_drawer_open">Open Menu</string>
-    <string name="navigation_drawer_close">Close Menu</string>
+    <string name="navigation_drawer_open">ОТКРЫТЬ МЕНЮ</string>
+    <string name="navigation_drawer_close">ЗАКРЫТЬ МЕНЮ</string>
+    <string name="nav_header_title">ЗДРАВИЯ ЖЕЛАЮ, ТОВАРИЩ!</string>
     <string name="category_party_tasks">ПАРТИЙНЫЕ ПОРУЧЕНИЯ</string>
-    <string name="category_home_tasks">ДОМАШНИЕ ДЕЛА</string>
+    <string name="category_home_tasks">ХОЗЯЙСКОЕ</string>
     <string name="category_tickets">ТАЛОНЫ</string>
+    <string name="stats">ЛИЧНЫЕ ДОСТИЖЕНИЯ</string>
 </resources>

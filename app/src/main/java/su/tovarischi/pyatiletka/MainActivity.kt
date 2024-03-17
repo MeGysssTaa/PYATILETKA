@@ -66,20 +66,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onPause() {
         super.onPause()
+
         val pauseMusicIntent = Intent(this, BackgroundMusicService::class.java)
-        pauseMusicIntent.action = "PAUSE"
+        pauseMusicIntent.action = "su.tovarischi.pyatiletka.intent.action.PAUSE_ANTHEM"
         startService(pauseMusicIntent)
     }
 
     override fun onResume() {
         super.onResume()
+
         val resumeMusicIntent = Intent(this, BackgroundMusicService::class.java)
-        resumeMusicIntent.action = "RESUME"
+        resumeMusicIntent.action = "su.tovarischi.pyatiletka.intent.action.RESUME_ANTHEM"
         startService(resumeMusicIntent)
     }
 
     override fun onDestroy() {
         super.onDestroy()
+
         stopService(Intent(this, BackgroundMusicService::class.java))
     }
 }

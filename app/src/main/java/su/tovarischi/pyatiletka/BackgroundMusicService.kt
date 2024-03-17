@@ -21,8 +21,8 @@ class BackgroundMusicService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            "PAUSE" -> player.pause()
-            "RESUME" -> player.start()
+            "su.tovarischi.pyatiletka.intent.action.PAUSE_ANTHEM" -> player.pause()
+            "su.tovarischi.pyatiletka.intent.action.RESUME_ANTHEM" -> player.start()
             else -> player.start()
         }
         return START_STICKY

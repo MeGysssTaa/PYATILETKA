@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PYATILETKA</string>
+    <string name="app_name">ПЯТИЛЕТКА</string>
+    <string name="navigation_drawer_open">Open Menu</string>
+    <string name="navigation_drawer_close">Close Menu</string>
+    <string name="category_party_tasks">ПАРТИЙНЫЕ ПОРУЧЕНИЯ</string>
+    <string name="category_home_tasks">ДОМАШНИЕ ДЕЛА</string>
+    <string name="category_tickets">ТАЛОНЫ</string>
 </resources>

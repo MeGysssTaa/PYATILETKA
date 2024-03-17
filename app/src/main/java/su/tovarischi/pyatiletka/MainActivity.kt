@@ -13,6 +13,8 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
 
+    private lateinit var databaseHelper: SovietDatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +29,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toolbar.navigationIcon = AppCompatResources.getDrawable(this, R.drawable.ic_outline_menu_white_24dp)
 
         startService(Intent(this, BackgroundMusicService::class.java))
+
+        databaseHelper = SovietDatabaseHelper(this)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@id/nav_category_home">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_category_home"
         android:name="su.tovarischi.pyatiletka.HomeFragment"
         tools:layout="@layout/fragment_home"/>
 
@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_party_tasks"/>
 
     <fragment
-        android:id="@+id/nav_stats"
+        android:id="@+id/nav_category_stats"
         android:name="su.tovarischi.pyatiletka.StatsFragment"
         tools:layout="@layout/fragment_stats"/>
 </navigation>

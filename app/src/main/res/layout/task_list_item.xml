@@ -1,71 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp">
-
-    <CheckBox
-        android:id="@+id/taskIsCompletedCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical" />
+    app:cardElevation="8dp"
+    app:cardCornerRadius="24dp"
+    android:layout_margin="8dp">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/taskTitleTextView"
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/taskIsCompletedCheckBox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_gravity="center_vertical" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:orientation="vertical">-->
+            <TextView
+                android:id="@+id/taskTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/taskCreatedDateTextView"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textSize="20sp" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/taskCreatedTimeTextView"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textSize="20sp" />-->
-
-<!--            </LinearLayout>-->
-
+            <TextView
+                android:id="@+id/taskCreatedDateTimeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                />
 
             <TextView
                 android:id="@+id/taskDetailsTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                />
 
         </LinearLayout>
 
+        <ImageButton
+            android:id="@+id/deleteTaskButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_delete"
+            android:background="@drawable/rounded_button"
+            android:contentDescription="@string/delete_task"
+            android:layout_gravity="center_vertical"/>
+
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/deleteTaskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_delete"
-        android:contentDescription="@string/delete_task" />
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

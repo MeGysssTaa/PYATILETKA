@@ -2,6 +2,7 @@ package su.tovarischi.pyatiletka
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,11 +17,8 @@ class SovietTaskAdapter(
     private val interactionListener: InteractionListener,
 ) : RecyclerView.Adapter<SovietTaskAdapter.TaskViewHolder>() {
     private companion object {
-        val DISPLAY_DATE_FORMATTER: DateTimeFormatter =
-            DateTimeFormatter.ofPattern("dd.MM.yyyy")
-
-        val DISPLAY_TIME_FORMATTER: DateTimeFormatter =
-            DateTimeFormatter.ofPattern("HH:mm")
+        val DISPLAY_DATETIME_FORMATTER: DateTimeFormatter =
+            DateTimeFormatter.ofPattern("dd.MM.yyyy - HH:mm")
     }
 
     private val tasks = mutableListOf<SovietTask>()
@@ -47,27 +45,27 @@ class SovietTaskAdapter(
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val taskTitleTextView: TextView = itemView.findViewById(R.id.taskTitleTextView)
-        private val taskCreatedDateTextView: TextView = itemView.findViewById(R.id.taskCreatedDateTextView)
-        private val taskCreatedTimeTextView: TextView = itemView.findViewById(R.id.taskCreatedTimeTextView)
+        private val taskCreatedDateTimeTextView: TextView = itemView.findViewById(R.id.taskCreatedDateTimeTextView)
         private val taskDetailsTextView: TextView = itemView.findViewById(R.id.taskDetailsTextView)
         private val taskIsCompletedCheckBox: CheckBox = itemView.findViewById(R.id.taskIsCompletedCheckBox)
         private val deleteTaskButton: ImageButton = itemView.findViewById(R.id.deleteTaskButton)
 
         fun bind(task: SovietTask, position: Int) {
-            taskTitleTextView.text = task.title
-            taskCreatedDateTextView.text = task.created.format(DISPLAY_DATE_FORMATTER)
-            taskCreatedTimeTextView.text = task.created.format(DISPLAY_TIME_FORMATTER)
-            taskDetailsTextView.text = task.details
-            taskIsCompletedCheckBox.isChecked = task.isCompleted
+            updateDisplay(task)
 
             taskIsCompletedCheckBox.setOnClickListener {
-                if (!interactionListener.setIsCompleted(task, taskIsCompletedCheckBox.isChecked)) {
+                if (interactionListener.setIsCompleted(task, taskIsCompletedCheckBox.isChecked)) {
+                    // Set successful.
+                    updateDisplay(task)
+                } else {
+                    // Set failed. Rollback checkbox state.
                     taskIsCompletedCheckBox.toggle()
                 }
             }
 
             deleteTaskButton.setOnClickListener {
                 if (interactionListener.deleteTask(task)) {
+                    // Delete successful.
                     tasks.removeAt(position)
                     notifyItemRemoved(position)
                     notifyItemRangeChanged(position, tasks.size)
@@ -75,6 +73,26 @@ class SovietTaskAdapter(
             }
         }
 
+        private fun updateDisplay(task: SovietTask) {
+            taskTitleTextView.text = task.title
+            taskCreatedDateTimeTextView.text = task.created.format(DISPLAY_DATETIME_FORMATTER)
+            taskDetailsTextView.text = task.details
+            taskIsCompletedCheckBox.isChecked = task.isCompleted
+
+            updateTextViewDisplay(taskTitleTextView, task.isCompleted)
+            updateTextViewDisplay(taskDetailsTextView, task.isCompleted)
+            updateTextViewDisplay(taskCreatedDateTimeTextView, task.isCompleted)
+        }
+
+        private fun updateTextViewDisplay(textView: TextView, isTaskCompleted: Boolean) {
+            if (isTaskCompleted) {
+                textView.setTextColor(context.getColor(R.color.light_gray))
+                textView.paintFlags = textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            } else {
+                textView.setTextColor(context.getColor(R.color.dark_gray))
+                textView.paintFlags = textView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+            }
+        }
     }
 
     interface InteractionListener {

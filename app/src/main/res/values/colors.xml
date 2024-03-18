@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="my_light_primary">#CF232E</color>
     <color name="my_light_on_primary">#FFFFFF</color>
+    <color name="dark_gray">#222222</color>
+    <color name="light_gray">#AAAAAA</color>
 </resources>

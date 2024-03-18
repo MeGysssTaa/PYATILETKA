@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-
 class StatsFragment : Fragment(R.layout.fragment_stats) {
     override fun onCreateView(
         inflater: LayoutInflater,

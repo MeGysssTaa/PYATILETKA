@@ -20,20 +20,13 @@
             app:titleTextAppearance="@style/ToolbarTitleStyle"
             app:title="@string/app_name" />
 
-        <LinearLayout
-            android:id="@+id/main_content"
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <!-- Your main content goes here -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hello World!"
-                android:textSize="24sp" />
-
-        </LinearLayout>
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation"/>
 
     </LinearLayout>
 

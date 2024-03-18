@@ -8,12 +8,17 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import com.google.android.material.navigation.NavigationView
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
 
     private lateinit var databaseHelper: SovietDatabaseHelper
+
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        navController = findNavController(R.id.nav_host_fragment)
         navView.setNavigationItemSelectedListener(this)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -46,16 +52,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_category_party_tasks -> {
-
+                navController.navigate(R.id.nav_party_tasks)
             }
             R.id.nav_category_home_tasks -> {
-                println("a")
+                navController.navigate(R.id.nav_home_tasks)
             }
             R.id.nav_category_tickets -> {
-                println("b")
+                navController.navigate(R.id.nav_tickets)
             }
             R.id.nav_stats -> {
-                println("s")
+                navController.navigate(R.id.nav_stats)
             }
         }
 

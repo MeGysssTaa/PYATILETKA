@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/nav_main">
+
+    <fragment
+        android:id="@+id/nav_main"
+        android:name="su.tovarischi.pyatiletka.MainFragment"
+        tools:layout="@layout/fragment_main"/>
+
+    <fragment
+        android:id="@+id/nav_tickets"
+        android:name="su.tovarischi.pyatiletka.TicketsFragment"
+        tools:layout="@layout/fragment_tickets"/>
+
+    <fragment
+        android:id="@+id/nav_home_tasks"
+        android:name="su.tovarischi.pyatiletka.HomeTasksFragment"
+        tools:layout="@layout/fragment_home_tasks"/>
+
+    <fragment
+        android:id="@+id/nav_party_tasks"
+        android:name="su.tovarischi.pyatiletka.PartyTasksFragment"
+        tools:layout="@layout/fragment_party_tasks"/>
+
+    <fragment
+        android:id="@+id/nav_stats"
+        android:name="su.tovarischi.pyatiletka.StatsFragment"
+        tools:layout="@layout/fragment_stats"/>
+</navigation>

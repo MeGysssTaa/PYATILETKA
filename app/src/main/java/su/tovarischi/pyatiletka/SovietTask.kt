@@ -12,7 +12,7 @@ data class SovietTask(
     val category: Category,
     val title: String,
     val details: String,
-    val isCompleted: Boolean,
+    var isCompleted: Boolean,
 ) {
     companion object {
         fun random() = SovietTask(

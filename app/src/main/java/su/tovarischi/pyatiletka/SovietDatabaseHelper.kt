@@ -102,29 +102,29 @@ class SovietDatabaseHelper(context: Context)
         }
     }
 
-    fun updateIsCompleted(taskId: UUID, isCompleted: Boolean) {
+    fun updateIsCompleted(taskId: UUID, isCompleted: Boolean): Boolean {
         val values = ContentValues().apply {
             put("is_completed", isCompleted.toInt())
         }
 
-        writableDatabase.use { db ->
+        return writableDatabase.use { db ->
             db.update(
                 "tasks",
                 values,
                 "task_id = ?",
                 arrayOf(taskId.toString()),
             )
-        }
+        }.toBoolean()
     }
 
-    fun deleteTask(taskId: UUID) {
-        writableDatabase.use { db ->
+    fun deleteTask(taskId: UUID): Boolean {
+        return writableDatabase.use { db ->
             db.delete(
                 "tasks",
                 "task_id = ?",
                 arrayOf(taskId.toString()),
             )
-        }
+        }.toBoolean()
     }
 
     fun dropDatabase(context: Context) {

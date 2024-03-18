@@ -5,6 +5,7 @@
     <string name="nav_header_title">ЗДРАВИЯ ЖЕЛАЮ, ТОВАРИЩ!</string>
     <string name="category_party_tasks">ПАРТИЙНЫЕ ПОРУЧЕНИЯ</string>
     <string name="category_home_tasks">ХОЗЯЙСКОЕ</string>
+    <string name="category_home">ГЛАВНАЯ</string>
     <string name="category_tickets">ТАЛОНЫ</string>
     <string name="stats">ЛИЧНЫЕ ДОСТИЖЕНИЯ</string>
     <!-- TODO: Remove or change this placeholder text -->

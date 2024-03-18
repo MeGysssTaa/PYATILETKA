@@ -13,17 +13,17 @@
     <fragment
         android:id="@+id/nav_category_tickets"
         android:name="su.tovarischi.pyatiletka.TicketsFragment"
-        tools:layout="@layout/fragment_tickets"/>
+        />
 
     <fragment
         android:id="@+id/nav_category_home_tasks"
         android:name="su.tovarischi.pyatiletka.HomeTasksFragment"
-        tools:layout="@layout/fragment_home_tasks"/>
+        />
 
     <fragment
         android:id="@+id/nav_category_party_tasks"
         android:name="su.tovarischi.pyatiletka.PartyTasksFragment"
-        tools:layout="@layout/fragment_party_tasks"/>
+        />
 
     <fragment
         android:id="@+id/nav_category_stats"

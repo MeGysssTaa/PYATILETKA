@@ -3,7 +3,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_category_home"
             android:icon="@drawable/ic_category_party_tasks"
             android:title="@string/category_home" />
         <item
@@ -19,9 +19,9 @@
             android:icon="@drawable/ic_category_tickets"
             android:title="@string/category_tickets" />
         <item
-            android:id="@+id/nav_stats"
+            android:id="@+id/nav_category_stats"
             android:icon="@drawable/ic_stats"
-            android:title="@string/stats" />
+            android:title="@string/category_stats" />
     </group>
 
 </menu>

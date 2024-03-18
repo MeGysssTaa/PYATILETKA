@@ -34,16 +34,38 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home,
+                R.id.nav_category_home,
                 R.id.nav_category_party_tasks,
                 R.id.nav_category_home_tasks,
                 R.id.nav_category_tickets,
-                R.id.nav_stats
+                R.id.nav_category_stats
             ), drawerLayout
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.nav_category_home -> {
+                    toolbar.setSubtitle(R.string.category_home)
+                }
+                R.id.nav_category_party_tasks -> {
+                    toolbar.setSubtitle(R.string.category_party_tasks)
+                }
+                R.id.nav_category_home_tasks -> {
+                    toolbar.setSubtitle(R.string.category_home_tasks)
+                }
+                R.id.nav_category_tickets -> {
+                    toolbar.setSubtitle(R.string.category_tickets)
+                }
+                R.id.nav_category_stats -> {
+                    toolbar.setSubtitle(R.string.category_stats)
+                }
+            }
+        }
+
 
         startService(Intent(this, BackgroundMusicService::class.java))
     }

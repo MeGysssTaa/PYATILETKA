@@ -16,14 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:navigationIcon="@drawable/ic_outline_menu_white_24dp"
                 app:title="@string/app_name"
-                app:titleTextAppearance="@style/ToolbarTitleStyle" />
+                app:subtitle="@string/category_home"
+                app:navigationIcon="@drawable/ic_outline_menu_white_24dp"
+                app:titleTextAppearance="@style/ToolbarTitleStyle"
+                app:subtitleTextAppearance="@style/ToolbarSubtitleStyle"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 

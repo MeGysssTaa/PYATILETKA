@@ -15,4 +15,10 @@
     <string name="label_stats_tasks_all">ВСЕ ЗАДАЧИ</string>
     <string name="label_stats_tasks_completed">ЗАВЕРШЁННЫЕ</string>
     <string name="label_stats_tasks_pending">К ВЫПОЛНЕНИЮ</string>
+    <string name="task_name_hint">НАЗВАНИЕ ЗАДАЧИ</string>
+    <string name="task_description_hint">ОПИСАНИЕ</string>
+    <string name="delete_task_dialog_title">ПАРТИЯ ОБ ЭТОМ \nУЗНАЕТ!</string>
+    <string name="delete_task_dialog_text">Да?</string>
+    <string name="no">Нет</string>
+    <string name="yes">Да</string>
 </resources>

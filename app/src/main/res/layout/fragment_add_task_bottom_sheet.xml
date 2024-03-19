@@ -11,12 +11,11 @@
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
-        <EditText
-            android:id="@+id/task_name_edit_text"
+        <Spinner
+            android:id="@+id/category_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Task Name"/>
+            android:layout_weight="1"/>
 
         <ImageButton
             android:id="@+id/add_task_button"
@@ -24,20 +23,20 @@
             android:src="@drawable/ic_forward_arrow"
             app:tint="@color/my_light_on_primary"
             android:layout_width="45dp"
-            android:layout_height="45dp" />
+            android:layout_height="45dp"/>
 
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/task_name_edit_text"
+        android:hint="@string/task_name_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/task_description_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Task Description"/>
-
-
-    <Spinner
-        android:id="@+id/category_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:hint="@string/task_description_hint"/>
 
 </LinearLayout>

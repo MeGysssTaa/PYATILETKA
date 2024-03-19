@@ -65,8 +65,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-
         startService(Intent(this, BackgroundMusicService::class.java))
     }
 

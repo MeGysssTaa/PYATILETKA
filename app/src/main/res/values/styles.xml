@@ -19,4 +19,17 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
+    <style name="DialogFragmentTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:fontFamily">@font/molot</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="DialogFragmentText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+<!--    <style name="DialogFragmentButtonNo" parent="?attr/buttonBarPositiveButtonStyle">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--    </style>-->
 </resources>

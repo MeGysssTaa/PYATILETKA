@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Spinner
@@ -21,14 +20,14 @@ class AddTaskBottomSheetFragment : BottomSheetDialogFragment(R.layout.fragment_a
     }
 
 
-    private var taskCategory: SovietTask.Category? = null
-    private var availableCategories: List<SovietTask.Category>? = null
+    private var taskCategory: String? = null
+    private var availableCategories: List<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let { it ->
-            taskCategory = SovietTask.Category.valueOf(it.getString(ARG_TASK_CATEGORY) ?: return@let)
-            availableCategories = it.getStringArrayList(ARG_AVAILABLE_CATEGORIES)?.map { SovietTask.Category.valueOf(it) }
+        arguments?.let {
+            taskCategory = it.getString(ARG_TASK_CATEGORY)
+            availableCategories = it.getStringArrayList(ARG_AVAILABLE_CATEGORIES)
         }
     }
     override fun onCreateView(
@@ -61,17 +60,16 @@ class AddTaskBottomSheetFragment : BottomSheetDialogFragment(R.layout.fragment_a
         })
 
         // Set up the category spinner
-        val categoryAdapter = ArrayAdapter(
+            val categoryAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item,
-            availableCategories?.map { it.name } ?: emptyList()
+            availableCategories?.map { it} ?: emptyList()
         )
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         categorySpinner.adapter = categoryAdapter
 
         // Set the selected category
-        categorySpinner.setSelection(categoryAdapter.getPosition(taskCategory?.name))
-
+        categorySpinner.setSelection(categoryAdapter.getPosition(taskCategory))
 
         addTaskButton.setOnClickListener {
             val taskName = taskNameEditText.text.toString()

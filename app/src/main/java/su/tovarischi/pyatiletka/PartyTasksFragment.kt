@@ -8,6 +8,8 @@ class PartyTasksFragment : TaskListFragment() {
 
     override fun deleteTask(task: SovietTask): Boolean {
 
+        val dialogFragment = DeletePartyTaskConfirmationDialogFragment()
+        dialogFragment.show(requireActivity().supportFragmentManager, "DeletePartyTaskConfirmationDialogFragment")
         return false
     }
 }

@@ -38,7 +38,7 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
     }
 
     private fun initRecyclerView(view: View) {
-        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView = view.findViewById(R.id.tasksRecyclerView)
         sovietTaskAdapter = SovietTaskAdapter(requireContext(), this)
         recyclerView.adapter = sovietTaskAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

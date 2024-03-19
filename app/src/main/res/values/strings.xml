@@ -12,4 +12,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="create_new_task_button">СОЗДАТЬ ЗАДАЧУ</string>
     <string name="delete_task">УДАЛИТЬ ЗАДАЧУ</string>
+    <string name="label_stats_tasks_all">ВСЕ ЗАДАЧИ</string>
+    <string name="label_stats_tasks_completed">ЗАВЕРШЁННЫЕ</string>
+    <string name="label_stats_tasks_pending">К ВЫПОЛНЕНИЮ</string>
 </resources>

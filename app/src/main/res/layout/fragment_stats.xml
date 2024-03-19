@@ -5,9 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".StatsFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="stats fragment" />
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 
 </FrameLayout>

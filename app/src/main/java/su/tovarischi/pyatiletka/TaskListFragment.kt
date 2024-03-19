@@ -50,7 +50,13 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
     }
 
     private fun createTask() {
-
+        val args = Bundle().apply {
+            putString("task_category", tasksCategory.name)
+            putStringArrayList("available_categories", SovietTask.Category.entries.map { it.name }.toCollection(ArrayList()))
+        }
+        val addTaskBottomSheetFragment = AddTaskBottomSheetFragment()
+        addTaskBottomSheetFragment.arguments = args
+        addTaskBottomSheetFragment.show(requireActivity().supportFragmentManager, "AddTaskBottomSheetFragment")
     }
 
     override fun setIsCompleted(task: SovietTask, newIsCompleted: Boolean): Boolean {

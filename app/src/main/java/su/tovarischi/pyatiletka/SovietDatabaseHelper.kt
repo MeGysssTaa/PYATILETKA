@@ -127,6 +127,20 @@ class SovietDatabaseHelper(context: Context)
         }.toBoolean()
     }
 
+    fun countTasks(isCompleted: Boolean?): Int {
+        val whereClause: String = isCompleted?.let { "where is_completed = $it" } ?: ""
+
+        return writableDatabase.use { db ->
+            db.rawQuery(
+                "select count(*) from tasks $whereClause",
+                arrayOf(),
+            ).use { cursor ->
+                check(cursor.moveToFirst()) { "No results???" }
+                cursor.getInt(0)
+            }
+        }
+    }
+
     fun dropDatabase(context: Context) {
         context.deleteDatabase(DATABASE_NAME)
     }

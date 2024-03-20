@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
 
-class DeletePartyTaskConfirmationDialogFragment : DialogFragment() {
+class DeletePartyTaskFragment(
+    private val task: SovietTask,
+    private val listener : OnTaskDeleteConfirmationListener,
+) : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         isCancelable = false
@@ -17,6 +20,7 @@ class DeletePartyTaskConfirmationDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        dialog?.window?.setBackgroundDrawableResource(R.drawable.rounded_corner_background)
         return inflater.inflate(R.layout.dialog_fragment_delete_confirmation, container, false)
     }
 
@@ -30,8 +34,12 @@ class DeletePartyTaskConfirmationDialogFragment : DialogFragment() {
 
         deleteButton.setOnClickListener{
 
-
+            listener.onTaskDeleteConfirmed(task)
             dismiss()
         }
+    }
+
+    interface OnTaskDeleteConfirmationListener {
+        fun onTaskDeleteConfirmed(task: SovietTask)
     }
 }

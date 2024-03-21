@@ -26,7 +26,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        propagandaAdapter = PropagandaAdapter(SovietPropaganda.getAllSovietPropaganda())
+        propagandaAdapter = PropagandaAdapter(SovietPropaganda.getAllSovietPropaganda(), requireActivity().supportFragmentManager)
         recyclerView.adapter = propagandaAdapter
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
     }

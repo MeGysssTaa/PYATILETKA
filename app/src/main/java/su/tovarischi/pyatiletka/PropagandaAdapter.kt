@@ -5,9 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 
-class PropagandaAdapter(private val items: List<SovietPropaganda>) :
+class PropagandaAdapter(
+    private val items: List<SovietPropaganda>,
+    val fragmentManager: FragmentManager
+) :
     RecyclerView.Adapter<PropagandaAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,6 +36,11 @@ class PropagandaAdapter(private val items: List<SovietPropaganda>) :
             titleTextView.text = resources.getString(item.titleRes)
             descriptionTextView.text = resources.getString(item.descriptionRes)
             imageView.setImageResource(item.imageRes)
+
+            itemView.setOnClickListener {
+                val dialogFragment = PropagandaDetailFragment(item)
+                dialogFragment.show(fragmentManager, "ItemDetailDialogFragment")
+            }
         }
     }
 }

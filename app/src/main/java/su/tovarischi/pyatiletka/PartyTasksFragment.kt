@@ -13,8 +13,8 @@ class PartyTasksFragment : TaskListFragment(), DeletePartyTaskFragment.OnTaskDel
         return false
     }
 
-    override fun onTaskDeleteConfirmed(task: SovietTask) {
+    override fun onTaskDeleteConfirmed(task: SovietTask) : Boolean {
         // TODO : count as deleted?
-        super.deleteTask(task)
+        return super.deleteTask(task)
     }
 }

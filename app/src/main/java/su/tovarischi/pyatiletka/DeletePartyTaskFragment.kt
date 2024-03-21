@@ -40,6 +40,6 @@ class DeletePartyTaskFragment(
     }
 
     interface OnTaskDeleteConfirmationListener {
-        fun onTaskDeleteConfirmed(task: SovietTask)
+        fun onTaskDeleteConfirmed(task: SovietTask): Boolean
     }
 }

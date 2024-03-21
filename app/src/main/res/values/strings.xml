@@ -21,4 +21,19 @@
     <string name="delete_task_dialog_text">Да?</string>
     <string name="no">Нет</string>
     <string name="yes">Да</string>
+    <!-- TODO: Remove this text -->
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis metus eu nulla porta, eget malesuada lorem sagittis. Sed eu mauris ac mauris bibendum fringilla. Nulla facilisi. Nulla facilisi. Mauris vel eros non magna imperdiet facilisis. Morbi consectetur lorem eget diam maximus varius. Fusce bibendum lacus et quam efficitur, in tincidunt lorem fringilla.
+
+Curabitur efficitur maximus tortor, fermentum malesuada turpis fringilla ut. Pellentesque non metus non dolor tempor tincidunt. Vivamus in felis posuere, venenatis tellus eget, scelerisque tellus. Etiam commodo mollis justo, ac volutpat ante facilisis vitae. Maecenas sed mauris nibh. Nulla at urna eget mi suscipit viverra. Sed ac lectus id erat consequat efficitur.
+
+Praesent quis purus blandit, interdum urna in, consectetur metus. Nullam odio magna, pharetra eu ex in, efficitur malesuada ex. Proin tempor urna non dolor pharetra tristique. Donec suscipit nisi ante, eget mollis risus venenatis eget. Fusce a enim finibus, tincidunt eros id, facilisis mi. Cras ac ex ut felis dapibus bibendum. Sed quis sollicitudin risus.</string>
+
+
+
+<!--Propaganda Titles & Description-->
+    <string name="a">Aaaaa</string>
+    <string name="b">Bbbb</string>
+    <string name="c">CcccC</string>
+    <string name="d">DDDDdd</string>
+    <string name="e">EEEEE</string>
 </resources>

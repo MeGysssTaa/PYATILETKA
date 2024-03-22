@@ -33,10 +33,18 @@ class SovietDatabaseHelper(context: Context)
                 is_completed integer not null
             );
         """.trimIndent())
+
+        db.execSQL("""
+            create table task_delete_counter (
+                    counter integer default 0,
+                    category integer not null
+            );
+        """.trimIndent())
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("drop table if exists tasks")
+        db.execSQL("drop table if exists task_delete_counter")
         onCreate(db)
     }
 
@@ -137,6 +145,49 @@ class SovietDatabaseHelper(context: Context)
             ).use { cursor ->
                 check(cursor.moveToFirst()) { "No results???" }
                 cursor.getInt(0)
+            }
+        }
+    }
+
+
+    fun addTaskDelete(category: SovietTask.Category){
+        val currentCount = getTaskDeleteCount(category)
+        val values = ContentValues().apply {
+            put("counter", currentCount + 1)
+        }
+        writableDatabase.use { db ->
+            db.update(
+                "task_delete_counter",
+                values,
+                "category = ?",
+                arrayOf(category.ordinal.toString())
+            )
+        }
+    }
+
+    fun insertTaskDelete(category: SovietTask.Category){
+        val values = ContentValues().apply {
+            put("category", category.ordinal)
+            put("counter", 0)
+        }
+
+        writableDatabase.use { db ->
+            db.insert("task_delete_counter", null, values)
+        }
+    }
+
+    fun getTaskDeleteCount(category: SovietTask.Category): Int{
+        return writableDatabase.use { db ->
+            db.rawQuery(
+                "SELECT counter FROM task_delete_counter WHERE category = ?",
+                arrayOf(category.ordinal.toString()),
+            ).use { cursor ->
+                if (cursor.moveToFirst()) {
+                    cursor.getInt(0)
+                } else {
+                    insertTaskDelete(category)
+                    0
+                }
             }
         }
     }

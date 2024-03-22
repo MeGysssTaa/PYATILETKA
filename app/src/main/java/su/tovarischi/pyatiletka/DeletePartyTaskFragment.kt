@@ -8,8 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.DialogFragment
 
 class DeletePartyTaskFragment(
-    private val task: SovietTask,
-    private val listener : InteractionListener,
+    private val task: SovietTask
 ) : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,25 +20,14 @@ class DeletePartyTaskFragment(
         savedInstanceState: Bundle?
     ): View? {
         dialog?.window?.setBackgroundDrawableResource(R.drawable.rounded_corner_background)
-        return inflater.inflate(R.layout.dialog_fragment_delete_confirmation, container, false)
+        return inflater.inflate(R.layout.fragment_delete_notification, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val deleteButton =  view.findViewById<Button>(R.id.dialog_delete_button)
-        val cancelButton = view.findViewById<Button>(R.id.dialog_cancel_button)
+        val okButton =  view.findViewById<Button>(R.id.dialog_ok_button)
 
-        cancelButton.setOnClickListener {
+        okButton.setOnClickListener {
             dismiss()
         }
-
-        deleteButton.setOnClickListener{
-
-            listener.onTaskDeleteAttempt(task)
-            dismiss()
-        }
-    }
-
-    interface InteractionListener {
-        fun onTaskDeleteAttempt(task: SovietTask)
     }
 }

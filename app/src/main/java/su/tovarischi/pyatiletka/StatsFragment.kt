@@ -36,6 +36,7 @@ class StatsFragment : Fragment(R.layout.fragment_stats) {
         val numPendingTasks = database.countTasks(false)
         val numCompletedTasks = database.countTasks(true)
         val numAllTasks = database.countTasks(null)
+        val partyTaskReports = database.getTaskDeleteCount(SovietTask.Category.PartyTask)
 
         val stats = listOf(
             StatisticItem(
@@ -53,6 +54,11 @@ class StatsFragment : Fragment(R.layout.fragment_stats) {
                 label = R.string.label_stats_tasks_all,
                 value = numAllTasks,
             ),
+            StatisticItem(
+                icon = R.drawable.ic_stats_tasks_all,
+                label = R.string.label_stats_party_tasks_reports,
+                value = partyTaskReports
+            )
         )
 
         statsAdapter.updateStats(stats)

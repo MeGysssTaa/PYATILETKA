@@ -15,19 +15,14 @@
     <string name="label_stats_tasks_all">ВСЕ ЗАДАЧИ</string>
     <string name="label_stats_tasks_completed">ЗАВЕРШЁННЫЕ</string>
     <string name="label_stats_tasks_pending">К ВЫПОЛНЕНИЮ</string>
+    <string name="label_stats_party_tasks_reports">млем</string>
     <string name="task_name_hint">НАЗВАНИЕ ЗАДАЧИ</string>
     <string name="task_description_hint">ОПИСАНИЕ</string>
     <string name="delete_task_dialog_title">ПАРТИЯ ОБ ЭТОМ УЗНАЕТ!</string>
     <string name="delete_task_dialog_text">Да?</string>
-    <string name="no">Нет</string>
-    <string name="yes">Да</string>
+    <string name="delete_ok_button">Ок((</string>
     <!-- TODO: Remove this text -->
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis metus eu nulla porta, eget malesuada lorem sagittis. Sed eu mauris ac mauris bibendum fringilla. Nulla facilisi. Nulla facilisi. Mauris vel eros non magna imperdiet facilisis. Morbi consectetur lorem eget diam maximus varius. Fusce bibendum lacus et quam efficitur, in tincidunt lorem fringilla.
-
-Curabitur efficitur maximus tortor, fermentum malesuada turpis fringilla ut. Pellentesque non metus non dolor tempor tincidunt. Vivamus in felis posuere, venenatis tellus eget, scelerisque tellus. Etiam commodo mollis justo, ac volutpat ante facilisis vitae. Maecenas sed mauris nibh. Nulla at urna eget mi suscipit viverra. Sed ac lectus id erat consequat efficitur.
-
-Praesent quis purus blandit, interdum urna in, consectetur metus. Nullam odio magna, pharetra eu ex in, efficitur malesuada ex. Proin tempor urna non dolor pharetra tristique. Donec suscipit nisi ante, eget mollis risus venenatis eget. Fusce a enim finibus, tincidunt eros id, facilisis mi. Cras ac ex ut felis dapibus bibendum. Sed quis sollicitudin risus.</string>
-
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis metus eu nulla porta, eget malesuada lorem sagittis. Sed eu mauris ac mauris bibendum fringilla. Nulla facilisi. Nulla facilisi. Mauris vel eros non magna imperdiet facilisis. Morbi consectetur lorem eget diam maximus varius. Fusce bibendum lacus et quam efficitur, in tincidunt lorem fringilla.</string>
 
 
 <!--Propaganda Titles & Description-->

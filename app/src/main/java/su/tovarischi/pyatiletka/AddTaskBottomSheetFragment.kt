@@ -64,9 +64,7 @@ class AddTaskBottomSheetFragment(
             val selectedCategoryPosition = categorySpinner.selectedItemPosition
             val taskCategory = categoryAdapter.getItem(selectedCategoryPosition)
 
-
             interactionListener.saveNewTask(taskName, taskDescription, taskCategory)
-
 
             dismiss()
         }

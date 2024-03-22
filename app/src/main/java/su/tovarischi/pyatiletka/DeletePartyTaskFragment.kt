@@ -9,7 +9,7 @@ import androidx.fragment.app.DialogFragment
 
 class DeletePartyTaskFragment(
     private val task: SovietTask,
-    private val listener : OnTaskDeleteConfirmationListener,
+    private val listener : InteractionListener,
 ) : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +34,12 @@ class DeletePartyTaskFragment(
 
         deleteButton.setOnClickListener{
 
-            listener.onTaskDeleteConfirmed(task)
+            listener.onTaskDeleteAttempt(task)
             dismiss()
         }
     }
 
-    interface OnTaskDeleteConfirmationListener {
-        fun onTaskDeleteConfirmed(task: SovietTask): Boolean
+    interface InteractionListener {
+        fun onTaskDeleteAttempt(task: SovietTask)
     }
 }

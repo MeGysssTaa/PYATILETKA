@@ -9,10 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
+import java.time.LocalDateTime
+import java.util.UUID
 import javax.inject.Inject
 
 @AndroidEntryPoint
-abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListener {
+abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListener, AddTaskBottomSheetFragment.InteractionListener {
     protected abstract val tasksCategory: SovietTask.Category
 
     @Inject
@@ -34,7 +36,9 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
         super.onViewCreated(view, savedInstanceState)
 
         createTaskButton = view.findViewById(R.id.createTaskButton)
-        createTaskButton.setOnClickListener { createTask() }
+        createTaskButton.setOnClickListener {
+            createTask()
+        }
     }
 
     private fun initRecyclerView(view: View) {
@@ -50,12 +54,7 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
     }
 
     private fun createTask() {
-        val args = Bundle().apply {
-            putString("task_category", tasksCategory.name)
-            putStringArrayList("available_categories", SovietTask.Category.entries.map { it.name }.toCollection(ArrayList()))
-        }
-        val addTaskBottomSheetFragment = AddTaskBottomSheetFragment()
-        addTaskBottomSheetFragment.arguments = args
+        val addTaskBottomSheetFragment = AddTaskBottomSheetFragment(tasksCategory, SovietTask.Category.entries, this)
         addTaskBottomSheetFragment.show(requireActivity().supportFragmentManager, "AddTaskBottomSheetFragment")
     }
 
@@ -66,5 +65,25 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
 
     override fun deleteTask(task: SovietTask): Boolean {
         return database.deleteTask(task.taskId)
+    }
+
+    override fun saveNewTask(
+        taskName: String,
+        taskDescription: String,
+        taskCategory: SovietTask.Category?
+    ) {
+        val newTaskCategory = taskCategory ?: tasksCategory
+
+        val newTask = SovietTask(
+            taskId = UUID.randomUUID(),
+            created = LocalDateTime.now(),
+            category = newTaskCategory,
+            title = taskName,
+            details = taskDescription,
+            isCompleted = false,
+        )
+
+        database.createTask(newTask)
+        initTasks()
     }
 }

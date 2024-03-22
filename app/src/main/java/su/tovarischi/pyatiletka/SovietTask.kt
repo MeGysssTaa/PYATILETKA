@@ -1,5 +1,6 @@
 package su.tovarischi.pyatiletka
 
+import androidx.annotation.StringRes
 import java.time.LocalDateTime
 import java.util.UUID
 import java.util.concurrent.ThreadLocalRandom
@@ -25,9 +26,9 @@ data class SovietTask(
         )
     }
 
-    enum class Category {
-        PartyTask,
-        HomeTask,
-        Ticket,
+    enum class Category(@StringRes val label: Int) {
+        PartyTask(R.string.category_party_tasks),
+        HomeTask(R.string.category_home_tasks),
+        Ticket(R.string.category_tickets),
     }
 }

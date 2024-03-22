@@ -12,24 +12,11 @@ import android.widget.ImageButton
 import android.widget.Spinner
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class AddTaskBottomSheetFragment : BottomSheetDialogFragment(R.layout.fragment_add_task_bottom_sheet) {
-
-    companion object {
-        private const val ARG_TASK_CATEGORY = "task_category"
-        private const val ARG_AVAILABLE_CATEGORIES = "available_categories"
-    }
-
-
-    private var taskCategory: String? = null
-    private var availableCategories: List<String>? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            taskCategory = it.getString(ARG_TASK_CATEGORY)
-            availableCategories = it.getStringArrayList(ARG_AVAILABLE_CATEGORIES)
-        }
-    }
+class AddTaskBottomSheetFragment(
+    private var taskCategory: SovietTask.Category,
+    private var availableCategories: List<SovietTask.Category>,
+    private val interactionListener: InteractionListener
+) : BottomSheetDialogFragment(R.layout.fragment_add_task_bottom_sheet) {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -60,10 +47,10 @@ class AddTaskBottomSheetFragment : BottomSheetDialogFragment(R.layout.fragment_a
         })
 
         // Set up the category spinner
-            val categoryAdapter = ArrayAdapter(
+        val categoryAdapter = CategoryArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item,
-            availableCategories?.map { it} ?: emptyList()
+            availableCategories
         )
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         categorySpinner.adapter = categoryAdapter
@@ -74,12 +61,19 @@ class AddTaskBottomSheetFragment : BottomSheetDialogFragment(R.layout.fragment_a
         addTaskButton.setOnClickListener {
             val taskName = taskNameEditText.text.toString()
             val taskDescription = taskDescriptionEditText.text.toString()
+            val selectedCategoryPosition = categorySpinner.selectedItemPosition
+            val taskCategory = categoryAdapter.getItem(selectedCategoryPosition)
 
 
-            // TODO save new Task
+            interactionListener.saveNewTask(taskName, taskDescription, taskCategory)
 
 
             dismiss()
         }
     }
+
+    interface InteractionListener {
+        fun saveNewTask(taskName: String, taskDescription: String, taskCategory: SovietTask.Category?)
+    }
+
 }

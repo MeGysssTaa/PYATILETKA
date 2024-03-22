@@ -3,7 +3,7 @@ package su.tovarischi.pyatiletka
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PartyTasksFragment : TaskListFragment(), DeletePartyTaskFragment.OnTaskDeleteConfirmationListener {
+class PartyTasksFragment : TaskListFragment(), DeletePartyTaskFragment.InteractionListener {
     override val tasksCategory = SovietTask.Category.PartyTask
 
     override fun deleteTask(task: SovietTask): Boolean {
@@ -13,8 +13,7 @@ class PartyTasksFragment : TaskListFragment(), DeletePartyTaskFragment.OnTaskDel
         return false
     }
 
-    override fun onTaskDeleteConfirmed(task: SovietTask) : Boolean {
+    override fun onTaskDeleteAttempt(task: SovietTask) {
         // TODO : count as deleted?
-        return super.deleteTask(task)
     }
 }

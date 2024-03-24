@@ -23,7 +23,7 @@
             android:id="@+id/propaganda_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style='@style/PropagandaCardTitle'
+            style="@style/PropagandaCardTitle"
             android:paddingHorizontal="16dp"
             android:paddingVertical="6dp"/>
 
@@ -31,8 +31,8 @@
             android:id="@+id/propaganda_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum"
-            style="PropagandaCardDesc"
+            android:text="@string/prop1_details"
+            style="@style/PropagandaCardDesc"
             android:lines="2"
             android:ellipsize="end"
             android:paddingHorizontal="16dp"

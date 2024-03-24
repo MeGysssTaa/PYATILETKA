@@ -13,7 +13,7 @@ class SovietDatabaseHelper(context: Context)
 {
     private companion object {
         const val DATABASE_NAME = "pyatiletka.db"
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
 
         val DATETIME_FORMATTER: DateTimeFormatter =
             DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
@@ -179,7 +179,7 @@ class SovietDatabaseHelper(context: Context)
     fun getTaskDeleteCount(category: SovietTask.Category): Int{
         return writableDatabase.use { db ->
             db.rawQuery(
-                "SELECT counter FROM task_delete_counter WHERE category = ?",
+                "select counter from task_delete_counter where category = ?",
                 arrayOf(category.ordinal.toString()),
             ).use { cursor ->
                 if (cursor.moveToFirst()) {

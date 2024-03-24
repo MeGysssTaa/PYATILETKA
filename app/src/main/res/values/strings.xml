@@ -22,13 +22,19 @@
     <string name="delete_task_dialog_text">Да?</string>
     <string name="delete_ok_button">Ок((</string>
     <!-- TODO: Remove this text -->
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis metus eu nulla porta, eget malesuada lorem sagittis. Sed eu mauris ac mauris bibendum fringilla. Nulla facilisi. Nulla facilisi. Mauris vel eros non magna imperdiet facilisis. Morbi consectetur lorem eget diam maximus varius. Fusce bibendum lacus et quam efficitur, in tincidunt lorem fringilla.</string>
+<!--    <string name="prop1_details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis metus eu nulla porta, eget malesuada lorem sagittis. Sed eu mauris ac mauris bibendum fringilla. Nulla facilisi. Nulla facilisi. Mauris vel eros non magna imperdiet facilisis. Morbi consectetur lorem eget diam maximus varius. Fusce bibendum lacus et quam efficitur, in tincidunt lorem fringilla.</string>-->
 
 
 <!--Propaganda Titles & Description-->
-    <string name="a">Aaaaa</string>
-    <string name="b">Bbbb</string>
-    <string name="c">CcccC</string>
-    <string name="d">DDDDdd</string>
-    <string name="e">EEEEE</string>
+    <string name="prop1_title">Вперёд, к светлому будущему, товарищи капибары!</string>
+    <string name="prop1_details">Вместе мы строим новое общество равенства и справедливости. Под флагом социализма, каждая капибара получит свою заслуженную апельсинку!</string>
+
+    <string name="prop2_title">Да здравствует индустриальная революция!</string>
+    <string name="prop2_details">"Вместе мы построим машину процветания. Каждая шестеренка, каждый вал – это вклад в светлое будущее капибар. Трудимся ради блага стада, взращивая урожай прогресса на полях индустриализации!</string>
+
+    <string name="prop3_title">КАПИБАТОР-8000: вперёд к звёздам!</string>
+    <string name="prop3_details">Величайшее достижение капибарского разума – КАПИБАТОР-8000 – отправится в космос, чтобы освоить неизведанные просторы! Рабочие капибары, объединившись, создали титана механики и технологии, дабы достигнуть новых галактик и планет. Пусть каждый винтик и болт, собранный трудолюбивыми лапками, принесёт нам новые миры под светом советских звёзд!</string>
+
+    <string name="prop4_title">Урожай мандариновой пшеницы в этом году вырос в целых 0.8 раз!</string>
+    <string name="prop4_details">Каждая капибара вносит вклад в общий кормушечный фонд! Союз Капибарных Колхозов укрепляет злаковые берега и процветание всех! Так держать!</string>
 </resources>

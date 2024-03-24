@@ -11,11 +11,10 @@ data class SovietPropaganda(
     companion object {
         fun getAllSovietPropaganda(): List<SovietPropaganda> {
             return listOf(
-                SovietPropaganda(R.string.a, R.string.lorem_ipsum, R.drawable.replace_with_capy),
-                SovietPropaganda(R.string.b, R.string.lorem_ipsum, R.drawable.replace_with_capy),
-                SovietPropaganda(R.string.c, R.string.lorem_ipsum, R.drawable.replace_with_capy),
-                SovietPropaganda(R.string.d, R.string.lorem_ipsum, R.drawable.replace_with_capy),
-                SovietPropaganda(R.string.e, R.string.lorem_ipsum, R.drawable.replace_with_capy),
+                SovietPropaganda(R.string.prop1_title, R.string.prop1_details, R.drawable.prop1_banner),
+                SovietPropaganda(R.string.prop2_title, R.string.prop2_details, R.drawable.prop2_banner),
+                SovietPropaganda(R.string.prop3_title, R.string.prop3_details, R.drawable.prop3_banner),
+                SovietPropaganda(R.string.prop4_title, R.string.prop4_details, R.drawable.prop4_banner),
             )
         }
     }

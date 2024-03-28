@@ -12,18 +12,18 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="create_new_task_button">СОЗДАТЬ ЗАДАЧУ</string>
     <string name="delete_task">УДАЛИТЬ ЗАДАЧУ</string>
+
     <string name="label_stats_tasks_all">ВСЕ ЗАДАЧИ</string>
     <string name="label_stats_tasks_completed">ЗАВЕРШЁННЫЕ</string>
     <string name="label_stats_tasks_pending">К ВЫПОЛНЕНИЮ</string>
-    <string name="label_stats_party_tasks_reports">млем</string>
+    <string name="label_stats_party_tasks_reports">ГОСИЗМЕНЫ</string>
+
     <string name="task_name_hint">НАЗВАНИЕ ЗАДАЧИ</string>
     <string name="task_description_hint">ОПИСАНИЕ</string>
-    <string name="delete_task_dialog_title">ПАРТИЯ ОБ ЭТОМ УЗНАЕТ!</string>
-    <string name="delete_task_dialog_text">Да?</string>
-    <string name="delete_ok_button">Ок((</string>
-    <!-- TODO: Remove this text -->
-<!--    <string name="prop1_details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis metus eu nulla porta, eget malesuada lorem sagittis. Sed eu mauris ac mauris bibendum fringilla. Nulla facilisi. Nulla facilisi. Mauris vel eros non magna imperdiet facilisis. Morbi consectetur lorem eget diam maximus varius. Fusce bibendum lacus et quam efficitur, in tincidunt lorem fringilla.</string>-->
 
+    <string name="delete_task_dialog_title">-50000 СОЦИАЛЬНЫЙ КРЕДИТ</string>
+    <string name="delete_task_dialog_text">Внимание! Попытка уклонения от выполнения партийных поручений была зафиксирована и передана уполномоченным лицам. Дата вашего отбытия в лагерь труда "Пчёлка" будет назначена следующим утром.</string>
+    <string name="delete_ok_button">Вину признаю</string>
 
 <!--Propaganda Titles & Description-->
     <string name="prop1_title">Вперёд, к светлому будущему, товарищи капибары!</string>

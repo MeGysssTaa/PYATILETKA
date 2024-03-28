@@ -55,7 +55,7 @@ class StatsFragment : Fragment(R.layout.fragment_stats) {
                 value = numAllTasks,
             ),
             StatisticItem(
-                icon = R.drawable.ic_stats_tasks_all,
+                icon = R.drawable.ic_stats_reports,
                 label = R.string.label_stats_party_tasks_reports,
                 value = partyTaskReports
             )

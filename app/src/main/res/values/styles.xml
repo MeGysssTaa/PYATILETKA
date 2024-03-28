@@ -21,7 +21,7 @@
     </style>
     <style name="DialogFragmentTitle" parent="TextAppearance.AppCompat.Title">
         <item name="android:fontFamily">@font/molot</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
     <style name="DialogFragmentText" parent="TextAppearance.AppCompat.Body1">

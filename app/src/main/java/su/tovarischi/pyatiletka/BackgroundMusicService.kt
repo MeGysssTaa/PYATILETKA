@@ -6,6 +6,10 @@ import android.media.MediaPlayer
 import android.os.IBinder
 
 class BackgroundMusicService : Service() {
+    private companion object {
+        private const val VOLUME = 0.05f
+    }
+
     private lateinit var player: MediaPlayer
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -16,7 +20,7 @@ class BackgroundMusicService : Service() {
         super.onCreate()
         player = MediaPlayer.create(this, R.raw.anthem)
         player.isLooping = true
-        player.setVolume(100f, 100f)
+        player.setVolume(VOLUME, VOLUME)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

@@ -11,6 +11,9 @@ import androidx.fragment.app.DialogFragment
 class DeletePartyTaskFragment(
     private val task: SovietTask
 ) : DialogFragment() {
+    private companion object {
+        private const val VOLUME = 1f
+    }
 
     private var alertMediaPlayer: MediaPlayer? = null
 
@@ -27,7 +30,7 @@ class DeletePartyTaskFragment(
         val view = inflater.inflate(R.layout.fragment_delete_notification, container, false)
 
         alertMediaPlayer = MediaPlayer.create(requireContext(), R.raw.alert)
-        alertMediaPlayer?.setVolume(100f, 100f)
+        alertMediaPlayer?.setVolume(VOLUME, VOLUME)
         alertMediaPlayer?.start()
 
         return view

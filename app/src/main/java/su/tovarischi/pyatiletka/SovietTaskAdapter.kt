@@ -50,6 +50,7 @@ class SovietTaskAdapter(
         private val taskIsCompletedCheckBox: CheckBox = itemView.findViewById(R.id.taskIsCompletedCheckBox)
         private val deleteTaskButton: ImageButton = itemView.findViewById(R.id.deleteTaskButton)
 
+        @SuppressLint("NotifyDataSetChanged")
         fun bind(task: SovietTask, position: Int) {
             updateDisplay(task)
 
@@ -57,6 +58,10 @@ class SovietTaskAdapter(
                 if (interactionListener.setIsCompleted(task, taskIsCompletedCheckBox.isChecked)) {
                     // Set successful.
                     updateDisplay(task)
+                    // Re-sort.
+                    tasks.sortByDescending { it.created }
+                    tasks.sortBy { it.isCompleted }
+                    notifyDataSetChanged()
                 } else {
                     // Set failed. Rollback checkbox state.
                     taskIsCompletedCheckBox.toggle()

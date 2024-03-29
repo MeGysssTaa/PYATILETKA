@@ -28,7 +28,7 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_task_list, container, false)
         initRecyclerView(view)
-        initTasks()
+        initTasks() // load initial task list
         return view
     }
 
@@ -84,6 +84,6 @@ abstract class TaskListFragment : Fragment(), SovietTaskAdapter.InteractionListe
         )
 
         database.createTask(newTask)
-        initTasks()
+        initTasks() // handle update
     }
 }

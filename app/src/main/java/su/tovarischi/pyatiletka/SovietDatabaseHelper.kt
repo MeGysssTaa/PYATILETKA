@@ -105,7 +105,7 @@ class SovietDatabaseHelper(context: Context)
                     )
                 }
 
-                tasks.sortedByDescending { it.created }
+                tasks.sortedByDescending { it.created }.sortedBy { it.isCompleted }
             }
         }
     }
